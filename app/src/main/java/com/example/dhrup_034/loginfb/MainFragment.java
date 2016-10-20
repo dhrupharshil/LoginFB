@@ -1,8 +1,6 @@
 package com.example.dhrup_034.loginfb;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -22,7 +20,6 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.Profile;
 import com.facebook.ProfileTracker;
-
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
@@ -34,10 +31,9 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class MainFragment extends Fragment {
 
+    String Name, em;
     private CallbackManager callbackManager;
     private TextView textView,tv2,tv3;
-String Name,em;
-
     private AccessTokenTracker accessTokenTracker;
     private ProfileTracker profileTracker;
 
@@ -59,6 +55,7 @@ String Name,em;
                     new GraphRequest.GraphJSONObjectCallback() {
                         @Override
                         public void onCompleted(
+
                                 JSONObject object,
                                 GraphResponse response) {
                             Log.v("LoginActivity Response ", response.toString());
